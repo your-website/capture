@@ -1,15 +1,35 @@
 import React from "react";
-import GlobalTyled from "./components/GlobalStyle";
 
-import Nav from "./components/Nav";
+// Style
+import GlobalStyled from "./components/GlobalStyle";
+
+// Pages
 import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
+import OurWork from "./pages/OurWork";
+
+// Components
+import Nav from "./components/Nav";
+
+// Router
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
+      <GlobalStyled />
       <Nav />
-      <AboutUs />
-      <GlobalTyled />
+      <Switch>
+        <Route path="/" exact>
+          <AboutUs />
+        </Route>
+        <Route path="/work">
+          <OurWork />
+        </Route>
+        <Route path="/contact">
+          <ContactUs />
+        </Route>
+      </Switch>
     </div>
   );
 }
