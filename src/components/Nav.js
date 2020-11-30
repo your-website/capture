@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import Menu from "./Menu";
 
 const Nav = () => {
   const { pathname } = useLocation();
+  const [openMenu, setOpenMenu] = useState(false);
+  const [menuTransfromX, setMenuTransfromX] = useState("0%");
+
+  const menuIsOpenOrClose = () => {
+    setOpenMenu(!openMenu);
+
+    if (menuTransfromX === "0%") {
+      setMenuTransfromX("100%");
+    } else {
+      setMenuTransfromX("0%");
+    }
+  };
+
+  const toNewPage = (to) => {
+    if (pathname !== to && openMenu) {
+      setOpenMenu(false);
+    }
+  };
+
   return (
     <StyledNav>
       <h1>
@@ -13,9 +33,14 @@ const Nav = () => {
           Capture
         </Link>
       </h1>
-      <ul>
+      <div style={{ position: "relative" }} onClick={menuIsOpenOrClose}>
+        <Menu openMenu={openMenu} />
+      </div>
+      <ul className={openMenu ? "open" : ""}>
         <li>
-          <Link to="/">1. About Us</Link>
+          <Link onClick={() => toNewPage("/")} to="/">
+            1. About Us
+          </Link>
           <Line
             transition={{ duration: 0.75 }}
             initial={{ width: "0%" }}
@@ -23,7 +48,9 @@ const Nav = () => {
           />
         </li>
         <li>
-          <Link to="/work">2. Our Work</Link>
+          <Link onClick={() => toNewPage("/work")} to="/work">
+            2. Our Work
+          </Link>
           <Line
             transition={{ duration: 0.75 }}
             initial={{ width: "0%" }}
@@ -31,7 +58,9 @@ const Nav = () => {
           />
         </li>
         <li>
-          <Link to="/contact">3. Contact Us</Link>
+          <Link onClick={() => toNewPage("/contact")} to="/contact">
+            3. Contact Us
+          </Link>
           <Line
             transition={{ duration: 0.75 }}
             initial={{ width: "0%" }}
@@ -87,6 +116,25 @@ const StyledNav = styled.nav`
     }
     li {
       padding: 0;
+    }
+  }
+
+  @media (max-width: 450px) {
+    flex-direction: row;
+
+    ul {
+      position: absolute;
+      top: 12vh;
+      right: 0;
+      height: 88vh;
+      background: #282828;
+      transition: all 1s ease;
+      flex-direction: column;
+      transform: translateX(100%);
+
+      &.open {
+        transform: translateX(0%);
+      }
     }
   }
 `;
