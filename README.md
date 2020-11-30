@@ -1,4 +1,4 @@
-- Demo: https://your-website.github.io/capture/
+- Demo: https://awesome-heyrovsky-2e2d01.netlify.app/
 
 ## Capture - site layout
 
