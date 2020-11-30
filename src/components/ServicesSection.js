@@ -87,6 +87,9 @@ const Cards = styled.div`
   @media (max-width: 1300px) {
     justify-content: center;
   }
+  @media (max-width: 500px) {
+    justify-content: center;
+  }
 `;
 
 const Card = styled.div`
