@@ -14,6 +14,10 @@ export const Layout = styled(motion.div)`
     padding: 2rem 2rem;
     text-align: center;
   }
+
+  @media (max-width: 485px) {
+    padding: 2rem 0.6rem;
+  }
 `;
 
 export const Description = styled.div`

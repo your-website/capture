@@ -72,6 +72,10 @@ const Services = styled(Layout)`
   p {
     width: 70%;
     padding: 2rem 0rem 4rem 0rem;
+
+    @media (max-width: 520px) {
+      width: 100%;
+    }
   }
 `;
 
@@ -89,6 +93,9 @@ const Card = styled.div`
   .icon {
     display: flex;
     align-items: center;
+    @media (max-width: 520px) {
+      justify-content: space-between;
+    }
     h3 {
       margin-left: 3rem;
       background: #fff;

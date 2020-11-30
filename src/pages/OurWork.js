@@ -91,6 +91,10 @@ const Work = styled(motion.div)`
   @media (max-width: 1300px) {
     padding: 2rem 2rem;
   }
+
+  @media (max-width: 485px) {
+    padding: 2rem 0.6rem;
+  }
 `;
 
 const Movie = styled(motion.div)`
