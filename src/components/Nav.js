@@ -82,7 +82,8 @@ const StyledNav = styled.nav`
   background: #282828;
   position: sticky;
   top: 0;
-  z-index: 5;
+  overflow: hidden;
+
   a {
     color: #fff;
     text-decoration: none;
@@ -123,7 +124,7 @@ const StyledNav = styled.nav`
     flex-direction: row;
 
     ul {
-      position: absolute;
+      position: fixed;
       top: 12vh;
       right: 0;
       height: 88vh;
