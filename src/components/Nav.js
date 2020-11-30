@@ -29,7 +29,7 @@ const Nav = () => {
   return (
     <StyledNav>
       <h1>
-        <Link id="logo" to="/">
+        <Link onClick={() => toNewPage("/")} id="logo" to="/">
           Capture
         </Link>
       </h1>
@@ -83,6 +83,7 @@ const StyledNav = styled.nav`
   position: sticky;
   top: 0;
   overflow: hidden;
+  z-index: 3;
 
   a {
     color: #fff;

@@ -1,7 +1,8 @@
 import React from "react";
+import styled from "styled-components";
 import AboutSection from "../components/AboutSection";
 import FaqSection from "../components/FaqSection";
-import SrvicesSection from "../components/ServicesSection";
+import ServicesSection from "../components/ServicesSection";
 
 // Animations
 import { motion } from "framer-motion";
@@ -10,18 +11,22 @@ import ScrollTop from "../components/ScrollTop";
 
 const AboutUs = () => {
   return (
-    <motion.div
+    <AboutStyle
       variants={pageAnimation}
       initial="hidden"
       animate="show"
       exit="exit"
     >
       <AboutSection />
-      <SrvicesSection />
+      <ServicesSection />
       <FaqSection />
       <ScrollTop />
-    </motion.div>
+    </AboutStyle>
   );
 };
+
+const AboutStyle = styled(motion.div)`
+  overflow: hidden;
+`;
 
 export default AboutUs;

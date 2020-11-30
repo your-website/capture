@@ -12,7 +12,7 @@ import { Layout, Description, Image } from "../styles";
 import styled from "styled-components";
 import { scrollReveal } from "../animation";
 import { useScroll } from "./useScroll";
-const SrvicesSection = () => {
+const ServicesSection = () => {
   const [element, controls] = useScroll();
 
   return (
@@ -66,7 +66,6 @@ const SrvicesSection = () => {
 };
 
 const Services = styled(Layout)`
-  overflow: hidden;
   h2 {
     padding-bottom: 5rem;
   }
@@ -109,4 +108,4 @@ const Card = styled.div`
   }
 `;
 
-export default SrvicesSection;
+export default ServicesSection;
