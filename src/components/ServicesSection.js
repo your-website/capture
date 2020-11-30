@@ -66,7 +66,6 @@ const SrvicesSection = () => {
 };
 
 const Services = styled(Layout)`
-  overflow: hidden;
   h2 {
     padding-bottom: 5rem;
   }

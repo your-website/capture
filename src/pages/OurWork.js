@@ -16,9 +16,16 @@ import {
   lineAnim,
   slider,
   SliderContainer,
+  swoopAdoop,
 } from "../animation";
+import { useScroll } from "../components/useScroll";
+import ScrollTop from "../components/ScrollTop";
 
 const OurWork = () => {
+  const [element, controls] = useScroll();
+  const [element2, controls2] = useScroll();
+  const [element3, controls3] = useScroll();
+
   return (
     <Work
       variants={pageAnimation}
@@ -33,6 +40,7 @@ const OurWork = () => {
         <Frame3 variants={slider}></Frame3>
         <Frame4 variants={slider}></Frame4>
       </motion.div>
+
       <Movie>
         <motion.h2 variants={fade}>The Athlere</motion.h2>
         <motion.div variants={lineAnim} className="line"></motion.div>
@@ -42,20 +50,33 @@ const OurWork = () => {
           </Hide>
         </Link>
       </Movie>
-      <Movie>
-        <h2>The Theracer</h2>
-        <div className="line"></div>
+
+      <Movie
+        ref={element2}
+        variants={fade}
+        animate={controls2}
+        initial="hidden"
+      >
+        <h2>The racer</h2>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-racer">
           <img src={theracer} alt="The Theracer" />
         </Link>
       </Movie>
-      <Movie>
+
+      <Movie
+        ref={element3}
+        variants={fade}
+        animate={controls3}
+        initial="hidden"
+      >
         <h2>Good Times</h2>
-        <div className="line"></div>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/good-times">
           <img src={goodtimes} alt="Good Times" />
         </Link>
       </Movie>
+      <ScrollTop />
     </Work>
   );
 };
@@ -69,8 +90,9 @@ const Work = styled(motion.div)`
   }
 `;
 
-const Movie = styled.div`
+const Movie = styled(motion.div)`
   padding-bottom: 10rem;
+  overflow: hidden;
   .line {
     height: 0.5rem;
     background: #23d997;
