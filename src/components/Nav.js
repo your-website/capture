@@ -33,9 +33,9 @@ const Nav = () => {
           Capture
         </Link>
       </h1>
-      <div style={{ position: "relative" }} onClick={menuIsOpenOrClose}>
+      <MenuDiv style={{ position: "relative" }} onClick={menuIsOpenOrClose}>
         <Menu openMenu={openMenu} />
-      </div>
+      </MenuDiv>
       <ul className={openMenu ? "open" : ""}>
         <li>
           <Link onClick={() => toNewPage("/")} to="/">
@@ -152,6 +152,10 @@ const Line = styled(motion.div)`
     max-width: 100%;
     left: 0%;
   }
+`;
+
+const MenuDiv = styled.div`
+  overflow: hidden;
 `;
 
 export default Nav;
