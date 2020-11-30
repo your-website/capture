@@ -29,7 +29,7 @@ const Nav = () => {
   return (
     <StyledNav>
       <h1>
-        <Link id="logo" to="/">
+        <Link id="logo" to="/capture/">
           Capture
         </Link>
       </h1>

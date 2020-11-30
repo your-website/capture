@@ -63,6 +63,10 @@ const HeadLine = styled.div`
     top: 10%;
     left: 50%;
     transform: translate(-50%, -10%);
+
+    @media (max-width: 545px) {
+      top: 5%;
+    }
   }
 
   img {
@@ -98,6 +102,10 @@ const AwardStyle = styled.div`
   }
   p {
     padding: 2rem 0rem;
+  }
+
+  @media (max-width: 430px) {
+    padding: 5rem 0.6rem;
   }
 `;
 

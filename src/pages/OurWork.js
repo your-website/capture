@@ -16,7 +16,6 @@ import {
   lineAnim,
   slider,
   SliderContainer,
-  swoopAdoop,
 } from "../animation";
 import { useScroll } from "../components/useScroll";
 import ScrollTop from "../components/ScrollTop";
@@ -24,7 +23,6 @@ import ScrollTop from "../components/ScrollTop";
 const OurWork = () => {
   const [element, controls] = useScroll();
   const [element2, controls2] = useScroll();
-  const [element3, controls3] = useScroll();
 
   return (
     <Work
@@ -51,12 +49,7 @@ const OurWork = () => {
         </Link>
       </Movie>
 
-      <Movie
-        ref={element2}
-        variants={fade}
-        animate={controls2}
-        initial="hidden"
-      >
+      <Movie ref={element} variants={fade} animate={controls} initial="hidden">
         <h2>The racer</h2>
         <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-racer">
@@ -65,9 +58,9 @@ const OurWork = () => {
       </Movie>
 
       <Movie
-        ref={element3}
+        ref={element2}
         variants={fade}
-        animate={controls3}
+        animate={controls2}
         initial="hidden"
       >
         <h2>Good Times</h2>

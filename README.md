@@ -1,4 +1,4 @@
-- Demo: https://your-website.github.io/capture/index
+- Demo: https://your-website.github.io/capture/
 
 ## Capture - site layout
 
